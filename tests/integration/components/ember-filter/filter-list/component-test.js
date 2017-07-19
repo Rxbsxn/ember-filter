@@ -2,22 +2,33 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('ember-filter/filter-list', 'Integration | Component | ember filter/filter list', {
-  integration: true
+  integration: true,
+  beforeEach() {
+    let filter = {name: 'filter', value: 2, type: 'project' };
+    this.set('model', [filter]);
+  }
 });
 
 test('it renders empty filter list', function(assert) {
-  this.render(hbs`{{ember-filter/filter-list}}`)
+  this.render(hbs`{{ember-filter/filter-list}}`);
 
-  assert.equal(this.$('').text().trim(), 'Filters not found')
+  assert.equal(this.$('').text().trim(), 'Filters not found');
 });
 
 test('it renders filter list', function(assert) {
-  let filter = {name: 'filter', value: 2, type: 'project'};
-  this.set('model', [filter]);
+  this.render(hbs`{{ember-filter/filter-list filters=model}}`);
 
-  this.render(hbs`{{ember-filter/filter-list filters=model}}`)
-
-  assert.equal(this.$().text().trim(), 'filter')
+  assert.equal(this.$().text().trim(), 'filter');
 });
+
+test('it removes filter from list', function(assert) {
+  this.render(hbs`{{ember-filter/filter-list filters=model}}`);
+
+  assert.equal(this.$('').length, 1);
+
+  this.$('button').click();
+
+  assert.equal(this.$('').text().trim(), 'Filters not found')
+})
 
 
