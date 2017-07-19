@@ -1,1 +1,5 @@
-{{yield}}
+{{#each filters as |filter|}}
+    {{filter.name}}
+{{else}}
+    Filters not found
+{{/each}}
