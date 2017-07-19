@@ -5,6 +5,12 @@ const { Component } = Ember;
 
 export default Component.extend({
   layout,
-  filters: null,
-  sortField: null
+
+  onRemove() {},
+
+  actions: {
+    remove() {
+      this.onRemove(this.get('filter'));
+    }
+  }
 });
