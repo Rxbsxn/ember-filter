@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import layout from './template';
 
-const { computed } = Ember;
+const { computed, Component } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   filters: null,
   sortField: null,
