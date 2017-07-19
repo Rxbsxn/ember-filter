@@ -2,24 +2,18 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('ember-filter', 'Integration | Component | ember filter', {
-  integration: true
+  integration: true,
+  beforeEach() {
+    let filters = [{ name: 'filter', value: 2, type: 'project' }, { name: 'super filtr', value: 32, type: 'status' },
+                   { name: 'extra filtr', value: 2, type: 'x' }];
+    this.set('model', filters)
+  }
 });
 
-test('it renders', function(assert) {
+test('it renders filter list correctly', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs`{{ember-filter filters=model}}`)
 
-  this.render(hbs`{{ember-filter}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#ember-filter}}
-      template block text
-    {{/ember-filter}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('[data-test-name]:first').text().trim(), 'filter');
+  assert.equal(this.$('[data-test-name]:last').text().trim(), 'extra filtr');
 });
