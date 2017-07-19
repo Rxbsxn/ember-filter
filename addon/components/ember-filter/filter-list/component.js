@@ -7,13 +7,15 @@ export default Ember.Component.extend({
   layout,
   filters: null,
   sortField: null,
-  sortBy: ['sortField:asc'],
 
-  sortedFilters: computed.sort('filters', 'sortBy'),
+  sortSettings: computed('sortField', function() {
+    return [ `${this.get('sortField')}:asc` ];
+  }),
+  sortedFilters: computed.sort('filters', 'sortSettings'),
 
   actions: {
     removeFilter(filter) {
-      let filters = this.get('filters')
+      this.get('sortedFilters').removeObject(filter);
     }
   }
 });
