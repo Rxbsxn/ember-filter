@@ -8,7 +8,7 @@ export default Ember.Component.extend({
 
   actions: {
     remove() {
-      this.get('onRemove')(this);
+      this.onRemove(this.get('filter'));
     }
   }
 });
