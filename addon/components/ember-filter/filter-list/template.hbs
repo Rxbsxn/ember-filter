@@ -1,4 +1,4 @@
-{{#each filters as |filter|}}
+{{#each sortedFilters as |filter|}}
     <h1 data-test-name>{{filter.name}}</h1>
     <button data-test-button {{action "removeFilter" filter}}>Delete Filter</button>
 {{else}}

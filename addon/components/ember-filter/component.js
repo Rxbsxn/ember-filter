@@ -3,5 +3,6 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout,
-  filters: null
+  filters: null,
+  sortField: null
 });
