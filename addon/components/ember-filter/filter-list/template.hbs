@@ -1,6 +1,5 @@
 {{#each sortedFilters as |filter|}}
-    {{ember-filter/filter-list/filter filter=filter}}
-     <button data-test-button {{action "removeFilter" filter}}>Delete Filter</button>
+    {{ember-filter/filter-list/filter filter=filter onRemove=(action 'removeFilter' filter)}}
 {{else}}
     <h1 data-test-not-found>Filters not found</h1>
 {{/each}}

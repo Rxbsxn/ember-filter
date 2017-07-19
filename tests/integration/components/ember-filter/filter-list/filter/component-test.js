@@ -11,5 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{ember-filter/filter-list/filter filter=filter}}`);
 
-  assert.equal(this.$('').text().trim(), 'super filter');
+  assert.equal(this.$('[data-test-name]').text().trim(), 'super filter');
 });
