@@ -12,23 +12,22 @@ moduleForComponent('ember-filter/filter-list', 'Integration | Component | ember 
 test('it renders empty filter list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list}}`);
 
-  assert.equal(this.$('').text().trim(), 'Filters not found');
+  assert.equal(this.$('[data-test-not-found]').text().trim(), 'Filters not found');
 });
 
 test('it renders filter list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model}}`);
 
-  assert.equal(this.$().text().trim(), 'filter');
+  assert.equal(this.$('[data-test-name]').text().trim(), 'filter');
 });
 
 test('it removes filter from list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model}}`);
 
-  assert.equal(this.$('').length, 1);
+  assert.equal(this.$('[data-test-name]').length, 1);
 
   this.$('button').click();
-
-  assert.equal(this.$('').text().trim(), 'Filters not found')
+  assert.equal(this.$('[data-test-not-found]').text().trim(), '')
 })
 
 

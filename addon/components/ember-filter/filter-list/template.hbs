@@ -1,5 +1,6 @@
 {{#each filters as |filter|}}
-    {{filter.name}}
+    <h1 data-test-name>{{filter.name}}</h1>
+    <button data-test-button {{action "removeFilter" filter}}>Delete Filter</button>
 {{else}}
-    Filters not found
+    <h1 data-test-not-found>Filters not found</h1>
 {{/each}}
