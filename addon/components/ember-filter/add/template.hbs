@@ -1,3 +1,10 @@
-<button>+</button>
+<button {{action "a"}}>+</button>
+{{#if isAdding}}
+    {{#each filters as |filter|}}
+        {{filter.name}}
+        <button {{action "add" filter}}>Choose</button>
+    {{/each}}
+{{/if}}
 
-{{yield}}
+
+

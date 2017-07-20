@@ -1,4 +1,4 @@
-{{#each sortedFilters as |filter|}}
+{{#each filters as |filter|}}
     {{ember-filter/filter-list/filter filter=filter onRemove=(action 'removeFilter' filter)}}
 {{else}}
     <h1 data-test-not-found>Filters not found</h1>

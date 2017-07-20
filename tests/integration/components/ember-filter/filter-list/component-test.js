@@ -22,24 +22,15 @@ test('it renders filter list', function(assert) {
   assert.equal(this.$('[data-test-name]').length, 3);
 });
 
-test('it sorts filter list by field', function(assert) {
-  let filters = [{name: "b", value: 3, type: 'project'}, {name: 'a', value: 2, type: 'project'}];
-  this.set('model', filters);
-
-  this.render(hbs`{{ember-filter/filter-list filters=model sortField="name"}}`);
-
-  assert.equal(this.$('[data-test-name]:first').text().trim(), "a");
-});
-
 test('it removes filter from list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model}}`);
 
   assert.equal(this.$('[data-test-name]').length, 3);
 
-  this.$('button:first').click();
+  this.$('[data-test-button]').click();
   assert.equal(this.$('[data-test-name]').length, 2)
 
-  this.$('button').click();
+  this.$('[data-test-button]').click();
   assert.equal(this.$('[data-test-name]').length, 0)
   assert.equal(this.$('[data-test-not-found]').text().trim(), 'Filters not found')
 });
