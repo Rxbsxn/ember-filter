@@ -7,6 +7,7 @@ export default Component.extend({
   layout,
   filters: null,
   sortField: null,
+  isAdding: false,
 
   sortSettings: computed('sortField', function() {
     return [ `${this.get('sortField')}:asc` ];
@@ -16,6 +17,9 @@ export default Component.extend({
   actions: {
     removeFilter(filter) {
       this.get('sortedFilters').removeObject(filter);
+    },
+    add() {
+      this.set('isAdding', true);
     }
   }
 });

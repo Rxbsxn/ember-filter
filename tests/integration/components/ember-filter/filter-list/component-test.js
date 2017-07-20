@@ -29,7 +29,15 @@ test('it sorts filter list by field', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model sortField="name"}}`);
 
   assert.equal(this.$('[data-test-name]:first').text().trim(), "a");
-})
+});
+
+test('it triggers new component', function(assert) {
+  this.set('isAdding', false)
+  this.render(hbs`{{ember-filter/filter-list isAdding=isAdding}}`);
+
+  this.$('[data-test-add-button]').click();
+  assert.equal(this.get('isAdding'), true, 'Adding new filter');
+});
 
 test('it removes filter from list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model}}`);
@@ -42,6 +50,6 @@ test('it removes filter from list', function(assert) {
   this.$('button').click();
   assert.equal(this.$('[data-test-name]').length, 0)
   assert.equal(this.$('[data-test-not-found]').text().trim(), 'Filters not found')
-})
+});
 
 

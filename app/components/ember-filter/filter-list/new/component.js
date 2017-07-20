@@ -1,0 +1,1 @@
+export { default } from 'ember-filter/components/ember-filter/filter-list/new/component';

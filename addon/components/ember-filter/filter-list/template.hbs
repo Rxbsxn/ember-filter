@@ -3,3 +3,10 @@
 {{else}}
     <h1 data-test-not-found>Filters not found</h1>
 {{/each}}
+
+{{#if isAdding}}
+    component
+{{else}}
+    <button data-test-add-button {{action "add"}}>Add new filter</button>
+    {{!-- <button data-test-add-button {{action (mut isAdding)}}>Add new filter</button> --}}
+{{/if}}
