@@ -6,8 +6,8 @@ export default Ember.Route.extend({
     model() {
         return Ember.A([
             {
-                name: 'Open',
-                value: 1,
+                name: 'Status',
+                value: "Open",
                 type: 'status'
             },
         ]);

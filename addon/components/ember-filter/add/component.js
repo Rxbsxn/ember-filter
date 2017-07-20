@@ -11,8 +11,13 @@ export default Ember.Component.extend({
     a() {
       this.toggleProperty('isAdding')
     },
+
     add(filter) {
       this.addFilter(filter);
-    }
-  }
+    },
+
+    selectValue(value) {
+     alert(`Selected value is ${value}`)
+    },
+  },
 });
