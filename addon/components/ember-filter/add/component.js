@@ -3,12 +3,12 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout,
-  filters: null,
 
   addFilter() {},
+  deleteFilter() {},
 
   actions: {
-    a() {
+    addInfo() {
       this.toggleProperty('isAdding')
     },
 
@@ -16,8 +16,8 @@ export default Ember.Component.extend({
       this.addFilter(filter);
     },
 
-    selectValue(value) {
-     alert(`Selected value is ${value}`)
+    filterDelete(filter) {
+      this.deleteFilter(filter);
     },
   },
 });

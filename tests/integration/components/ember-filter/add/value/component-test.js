@@ -12,14 +12,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{ember-filter/add/value}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), 'Choose Value');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#ember-filter/add/value}}
-      template block text
-    {{/ember-filter/add/value}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

@@ -5,7 +5,6 @@ const { Component } = Ember;
 
 export default Component.extend({
   layout,
-  filters: null,
 
   actions: {
     removeFilter(filter) {

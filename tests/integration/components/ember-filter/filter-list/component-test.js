@@ -1,11 +1,12 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 moduleForComponent('ember-filter/filter-list', 'Integration | Component | ember filter/filter list', {
   integration: true,
   beforeEach() {
-    let filters = [{ name: 'filter', value: 2, type: 'project' }, { name: 'super filtr', value: 213, type: 'x' },
-                  { name: 'extra filtr', value: 73}];
+    let filters = Ember.A([{ name: 'filter', value: 2, type: 'project' }, { name: 'super filtr', value: 213, type: 'x' },
+                  { name: 'extra filtr', value: 73}]);
     this.set('model', filters);
   }
 });
@@ -27,7 +28,7 @@ test('it removes filter from list', function(assert) {
 
   assert.equal(this.$('[data-test-name]').length, 3);
 
-  this.$('[data-test-button]').click();
+  this.$('[data-test-button]:first').click();
   assert.equal(this.$('[data-test-name]').length, 2)
 
   this.$('[data-test-button]').click();
