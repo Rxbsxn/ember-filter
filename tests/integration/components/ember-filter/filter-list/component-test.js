@@ -31,14 +31,6 @@ test('it sorts filter list by field', function(assert) {
   assert.equal(this.$('[data-test-name]:first').text().trim(), "a");
 });
 
-test('it triggers new component', function(assert) {
-  this.set('isAdding', false)
-  this.render(hbs`{{ember-filter/filter-list isAdding=isAdding}}`);
-
-  this.$('[data-test-add-button]').click();
-  assert.equal(this.get('isAdding'), true, 'Adding new filter');
-});
-
 test('it removes filter from list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model}}`);
 

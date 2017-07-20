@@ -18,8 +18,8 @@ export default Component.extend({
     removeFilter(filter) {
       this.get('sortedFilters').removeObject(filter);
     },
-    add() {
-      this.set('isAdding', true);
+    toggleAdd() {
+      this.toggleProperty('isAdding');
     }
   }
 });
