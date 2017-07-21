@@ -1,2 +1,4 @@
-<h1 data-test-name>{{filter.name}}</h1>
-<button data-test-button {{action "remove" filter}}>Remove Filter</button>
+<span class="label label-primary" data-test-name>
+    {{filter.value}}
+    <button data-test-button {{action "remove"}}></button>
+</span>

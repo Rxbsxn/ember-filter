@@ -1,1 +1,5 @@
-  {{ember-filter/filter-list filters=filters sortField=sortField}}
+{{#ember-filter/add filters=availableFilters addFilter=(action "addFilter")}}
+{{/ember-filter/add}}
+<div>
+{{ember-filter/filter-list filters=arrayFilters}}
+</div>

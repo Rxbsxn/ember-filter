@@ -1,11 +1,12 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 moduleForComponent('ember-filter/filter-list', 'Integration | Component | ember filter/filter list', {
   integration: true,
   beforeEach() {
-    let filters = [{ name: 'filter', value: 2, type: 'project' }, { name: 'super filtr', value: 213, type: 'x' },
-                  { name: 'extra filtr', value: 73}];
+    let filters = Ember.A([{ name: 'filter', value: 2, type: 'project' }, { name: 'super filtr', value: 213, type: 'x' },
+                  { name: 'extra filtr', value: 73}]);
     this.set('model', filters);
   }
 });
@@ -22,26 +23,17 @@ test('it renders filter list', function(assert) {
   assert.equal(this.$('[data-test-name]').length, 3);
 });
 
-test('it sorts filter list by field', function(assert) {
-  let filters = [{name: "b", value: 3, type: 'project'}, {name: 'a', value: 2, type: 'project'}];
-  this.set('model', filters);
-
-  this.render(hbs`{{ember-filter/filter-list filters=model sortField="name"}}`);
-
-  assert.equal(this.$('[data-test-name]:first').text().trim(), "a");
-})
-
 test('it removes filter from list', function(assert) {
   this.render(hbs`{{ember-filter/filter-list filters=model}}`);
 
   assert.equal(this.$('[data-test-name]').length, 3);
 
-  this.$('button:first').click();
+  this.$('[data-test-button]:first').click();
   assert.equal(this.$('[data-test-name]').length, 2)
 
-  this.$('button').click();
+  this.$('[data-test-button]').click();
   assert.equal(this.$('[data-test-name]').length, 0)
   assert.equal(this.$('[data-test-not-found]').text().trim(), 'Filters not found')
-})
+});
 
 

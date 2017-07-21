@@ -14,6 +14,6 @@ test('it renders filter list correctly', function(assert) {
 
   this.render(hbs`{{ember-filter filters=model}}`)
 
-  assert.equal(this.$('[data-test-name]:first').text().trim(), 'filter');
-  assert.equal(this.$('[data-test-name]:last').text().trim(), 'extra filtr');
+  assert.equal(this.$('[data-test-name]:first').text().trim(), '2');
+  assert.equal(this.$('[data-test-name]:last').text().trim(), '2');
 });
