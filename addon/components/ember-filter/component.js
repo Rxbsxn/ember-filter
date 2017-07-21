@@ -17,7 +17,12 @@ export default Component.extend({
 
   actions: {
     addFilter(filter) {
-      let arrayFilters = this.get('arrayFilters');
+      this._checkExistingRecords(filter);
+    }
+  },
+
+  _checkExistingRecords(filter) {
+    let arrayFilters = this.get('arrayFilters');
       let sameTypeRecord = arrayFilters.findBy('type', filter.type);
       if(sameTypeRecord) {
         arrayFilters.removeObject(sameTypeRecord);
@@ -25,6 +30,5 @@ export default Component.extend({
       } else {
         arrayFilters.pushObject(filter);
       }
-    }
   }
 });

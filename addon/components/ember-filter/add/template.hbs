@@ -1,8 +1,7 @@
 <button data-test-button {{action 'addInfo'}}>+</button>
 {{#if isAdding}}
     {{#each filters as |filter|}}
-        {{filter.name}}
-        {{ember-filter/add/value values=filter.values filter=filter sendData=(action "add")}}
+        {{ember-filter/add/value filter=filter addFilter=(action "add")}}
     {{/each}}
 {{/if}}
 

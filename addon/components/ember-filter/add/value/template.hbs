@@ -1,9 +1,10 @@
 {{#bs-dropdown tagName="span" as |dd|}}
+  {{filter.name}}
   {{#dd.toggle}}Choose Value <span class="caret"></span>{{/dd.toggle}}
   {{#dd.menu as |menu|}}
-    {{#each-in values as |key value|}}
+    {{#each-in filter.values as |key value|}}
         {{#menu.item}}
-        <a {{action "selectedState" value}}>{{value}}</a>
+        <a {{action "selectState" key}}>{{value}}</a>
         {{/menu.item}}
     {{/each-in}}
   {{/dd.menu}}
