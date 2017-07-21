@@ -16,10 +16,6 @@ export default Component.extend({
   actions: {
     addFilter(filter) {
       this.get('arrayFilters').pushObject(filter);
-    },
-
-    removeFromAvailables(filter) {
-      this.get('availableFilters').removeObject(filter);
     }
   }
 });
