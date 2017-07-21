@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   layout,
 
   addFilter() {},
-  deleteFilter() {},
 
   actions: {
     addInfo() {
@@ -14,10 +13,7 @@ export default Ember.Component.extend({
 
     add(filter) {
       this.addFilter(filter);
-    },
-
-    filterDelete(filter) {
-      this.deleteFilter(filter);
+      this.set('isAdding', false);
     },
   },
 });
