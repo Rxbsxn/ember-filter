@@ -5,19 +5,15 @@ export default Ember.Component.extend({
   layout,
 
   addFilter() {},
-  deleteFilter() {},
 
   actions: {
     addInfo() {
-      this.toggleProperty('isAdding')
+      this.set('isAdding', true);
     },
 
     add(filter) {
       this.addFilter(filter);
-    },
-
-    filterDelete(filter) {
-      this.deleteFilter(filter);
-    },
+      this.set('isAdding', false);
+    }
   },
 });
