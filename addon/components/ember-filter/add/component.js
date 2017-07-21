@@ -14,6 +14,6 @@ export default Ember.Component.extend({
     add(filter) {
       this.addFilter(filter);
       this.set('isAdding', false);
-    }
+    },
   },
 });
