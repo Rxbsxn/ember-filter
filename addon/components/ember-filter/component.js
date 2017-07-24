@@ -17,6 +17,10 @@ export default Component.extend({
   actions: {
     addFilter(filter) {
       this._checkExistingRecords(filter);
+    },
+
+    removeFilter(filter) {
+      this.get('arrayFilters').removeObject(filter);
     }
   },
 

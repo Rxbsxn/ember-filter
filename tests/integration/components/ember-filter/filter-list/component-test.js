@@ -24,7 +24,10 @@ test('it renders filter list', function(assert) {
 });
 
 test('it removes filter from list', function(assert) {
-  this.render(hbs`{{ember-filter/filter-list filters=model}}`);
+  this.set('removeMethod', (filter) => {
+    this.get('model').removeObject(filter)
+  })
+  this.render(hbs`{{ember-filter/filter-list filters=model removeFilter=(action removeMethod)}}`);
 
   assert.equal(this.$('[data-test-name]').length, 3);
 

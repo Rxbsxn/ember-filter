@@ -1,4 +1,4 @@
 {{yield (hash
-    list=(component 'ember-filter/filter-list' filters=uniqueList)
+    list=(component 'ember-filter/filter-list' filters=uniqueList removeFilter=(action "removeFilter"))
     add=(component 'ember-filter/add' availableFilters=availableFilters addFilter=(action "addFilter"))
 )}}

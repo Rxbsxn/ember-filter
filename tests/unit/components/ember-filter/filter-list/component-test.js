@@ -18,15 +18,15 @@ test('it renders', function(assert) {
     assert.ok(component);
 });
 
-test('it removes filter from list', function(assert) {
-    let filter = { name: "Close", value: 1, type: 'work' }
-    let component = this.subject();
+// test('it removes filter from list', function(assert) {
+//     let filter = { name: "Close", value: 1, type: 'work' }
+//     let component = this.subject();
 
-    component.get('filters').pushObject(filter);
+//     component.get('filters').pushObject(filter);
 
-    assert.equal(component.get('filters').length, 3);
+//     assert.equal(component.get('filters').length, 3);
 
-    component.send('removeFilter', filter);
+//     component.send('removeFilter', filter);
 
-    assert.equal(component.get('filters').length, 2);
-});
+//     assert.equal(component.get('filters').length, 2);
+// });

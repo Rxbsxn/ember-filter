@@ -6,9 +6,11 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
 
+  removeFilter() {},
+
   actions: {
     removeFilter(filter) {
-      this.get('filters').removeObject(filter);
+      this.removeFilter(filter);
     }
   }
 });
