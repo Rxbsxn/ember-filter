@@ -1,6 +1,6 @@
 <button data-test-button {{action 'addInfo'}}>+</button>
 {{#if isAdding}}
-    {{#each filters as |filter|}}
+    {{#each availableFilters as |filter|}}
         {{ember-filter/add/value filter=filter addFilter=(action "add")}}
     {{/each}}
 {{/if}}

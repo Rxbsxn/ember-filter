@@ -1,5 +1,4 @@
-{{#ember-filter/add filters=availableFilters addFilter=(action "addFilter")}}
-{{/ember-filter/add}}
-<div>
-{{ember-filter/filter-list filters=uniqueList}}
-</div>
+{{yield (hash
+    list=(component 'ember-filter/filter-list' filters=uniqueList)
+    add=(component 'ember-filter/add' availableFilters=availableFilters addFilter=(action "addFilter"))
+)}}
