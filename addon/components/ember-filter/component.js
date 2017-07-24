@@ -5,15 +5,14 @@ const { Component, A, computed} = Ember;
 
 export default Component.extend({
   layout,
+  availableFilters: null,
+  filters: null,
 
   arrayFilters: computed('filters.{}',function() {
     return A(this.get('filters'));
   }),
 
   uniqueList: computed.uniqBy('arrayFilters', 'type'),
-
-  availableFilters: A([{name: "State", values: {0: 'Done', 1: 'WIP'}, type: 'project'},
-                    {name: 'Workers', values: {0: 'Min', 1: 'Max'}, type: 'work'}]),
 
   actions: {
     addFilter(filter) {

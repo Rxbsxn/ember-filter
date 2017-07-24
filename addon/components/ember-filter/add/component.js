@@ -7,8 +7,8 @@ export default Ember.Component.extend({
   addFilter() {},
 
   actions: {
-    addInfo() {
-      this.set('isAdding', true);
+    addStatus() {
+      this.toggleProperty('isAdding');
     },
 
     add(filter) {

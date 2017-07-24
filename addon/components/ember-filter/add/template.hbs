@@ -1,4 +1,4 @@
-<button data-test-button {{action 'addInfo'}}>+</button>
+<button data-test-button {{action 'addStatus'}}>+</button>
 {{#if isAdding}}
     {{#each availableFilters as |filter|}}
         {{ember-filter/add/value filter=filter addFilter=(action "add")}}

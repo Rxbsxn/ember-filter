@@ -12,8 +12,10 @@ moduleForComponent('ember-filter', 'Integration | Component | ember filter', {
 
 test('it renders filter list correctly', function(assert) {
 
-  this.render(hbs`{{ember-filter filters=model}}`);
-
+  this.render(hbs`{{#ember-filter as |filter|}}
+    {{filter.list filters=model}}
+    {{/ember-filter}}
+  `);
   assert.equal(this.$('[data-test-name]:first').text().trim(), '2');
   assert.equal(this.$('[data-test-name]:last').text().trim(), '2');
 });
@@ -28,11 +30,17 @@ test('it should add new record', function(assert) {
     })
   });
 
-  this.render(hbs`{{ember-filter filters=model}}`);
-
+  this.render(hbs`{{#ember-filter filters=model as |filters|}}
+    {{filters.list}}
+    {{/ember-filter}}
+  `);
   assert.equal(this.$('[data-test-name]').length, 3);
 
-  this.render(hbs`{{ember-filter filters=model add=(action addAction)}}`);
+  this.render(hbs`{{#ember-filter filters=model addFilter=(action addAction) as |filters|}}
+    {{filters.list}}
+    {{/ember-filter}}
+  `);
+
   this.get('addAction')()
   assert.equal(this.$('[data-test-name]').length, 4);
 
