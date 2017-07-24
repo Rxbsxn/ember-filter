@@ -23,6 +23,7 @@ test('it removes filter from list', function(assert) {
     let component = this.subject();
 
     component.get('filters').pushObject(filter);
+
     assert.equal(component.get('filters').length, 3);
 
     component.send('removeFilter', filter);

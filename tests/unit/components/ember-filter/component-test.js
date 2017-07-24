@@ -31,6 +31,7 @@ test('it adds new filter', function(assert) {
     assert.equal(component.get('arrayFilters').length, 2);
 
     component.send('addFilter', filter)
+
     assert.equal(component.get('arrayFilters').length, 3);
 
 });

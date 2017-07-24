@@ -15,6 +15,7 @@ test('it renders', function(assert) {
 test('it opens list after click', function(assert) {
   this.set('isAdding', false);
   this.render(hbs`{{ember-filter/add isAdding=isAdding}}`);
+
   this.$('[data-test-button]').click();
 
   assert.equal(this.get('isAdding'), true);

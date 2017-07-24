@@ -29,9 +29,11 @@ test('it removes filter from list', function(assert) {
   assert.equal(this.$('[data-test-name]').length, 3);
 
   this.$('[data-test-button]:first').click();
+
   assert.equal(this.$('[data-test-name]').length, 2)
 
   this.$('[data-test-button]').click();
+
   assert.equal(this.$('[data-test-name]').length, 0)
   assert.equal(this.$('[data-test-not-found]').text().trim(), 'Filters not found')
 });
