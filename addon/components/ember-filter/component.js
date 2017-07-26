@@ -19,9 +19,8 @@ export default Component.extend({
     },
 
     removeFilter(filter) {
-      // this.get('arrayFilters').removeObject(filter);
       set(filter, 'value', null);
-      console.log(filter.value);
+      // console.log(filter.value);
     }
   },
 

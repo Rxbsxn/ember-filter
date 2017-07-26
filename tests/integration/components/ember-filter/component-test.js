@@ -46,15 +46,15 @@ test('it renders filter list correctly', function (assert) {
     {{/ember-filter}}
   `);
 
-  assert.equal(this.$('[data-test-name]:first').text().trim(), '2');
-  assert.equal(this.$('[data-test-name]:last').text().trim(), '2');
+  assert.equal(this.$('[data-test-name]:first').text().trim(), 'filter: 2');
+  assert.equal(this.$('[data-test-name]:last').text().trim(), 'extra filtr: 2');
 
   this.render(hbs `{{#ember-filter filters=filtersTwo as |filters|}}
     {{filters.list}}
     {{/ember-filter}}
   `);
-  assert.equal(this.$('[data-test-name]:first').text().trim(), '3');
-  assert.equal(this.$('[data-test-name]:last').text().trim(), '4');
+  assert.equal(this.$('[data-test-name]:first').text().trim(), 'new project: 3');
+  assert.equal(this.$('[data-test-name]:last').text().trim(), 'ccc: 4');
 });
 
 test('it should add new record', function (assert) {

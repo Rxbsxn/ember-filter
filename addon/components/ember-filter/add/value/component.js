@@ -6,14 +6,14 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
 
-  addFilter () {},
-
   actions: {
     selectState (key) {
       this._prepareFilter(key);
       this.addFilter(this.get('filter'));
     }
   },
+
+  addFilter () {},
 
   _prepareFilter (key) {
     let filter = this.get('filter');

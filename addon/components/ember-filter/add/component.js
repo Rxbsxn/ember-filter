@@ -6,12 +6,12 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
 
-  addFilter () {},
-
   actions: {
     addStatus () {
       this.toggleProperty('isAdding');
     },
+
+    addFilter () {},
 
     add (filter) {
       this.addFilter(filter);

@@ -14,6 +14,9 @@ module.exports = {
   },
   rules: {
     "ember/use-ember-get-and-set": 0,
+    "ember/named-functions-in-promises": [2, {
+      allowSimpleArrowFunction: true,
+    }],
     "ember/order-in-components": [2, {
       order: [
         'service',
@@ -22,8 +25,8 @@ module.exports = {
         'single-line-function',
         'multi-line-function',
         'observer',
-        'method',
         'actions',
+        'method',
       ]
     }]
   }

@@ -7,16 +7,21 @@ export default Component.extend({
   layout,
 
   currentFilters: computed('filters.@each.value', function() {
-    return this.get('filters').filter((filter) => {
-      return filter.value !== null;
-    });
+    if (this.get('filters') == undefined) {
+      return 'Filters not found';
+    } else {
+      return this.get('filters').filter((filter) => {
+        return filter.value !== null;
+      });
+    }
   }),
-
-  removeFilter() {},
 
   actions: {
     removeFilter(filter) {
       this.removeFilter(filter);
     }
-  }
+  },
+
+  removeFilter() {}
+
 });
