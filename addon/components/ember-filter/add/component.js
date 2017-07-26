@@ -1,19 +1,21 @@
 import Ember from 'ember';
 import layout from './template';
 
-export default Ember.Component.extend({
+const { Component } = Ember;
+
+export default Component.extend({
   layout,
 
-  addFilter() {},
+  addFilter () {},
 
   actions: {
-    addStatus() {
+    addStatus () {
       this.toggleProperty('isAdding');
     },
 
-    add(filter) {
+    add (filter) {
       this.addFilter(filter);
       this.set('isAdding', false);
-    },
-  },
+    }
+  }
 });

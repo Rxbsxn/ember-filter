@@ -10,7 +10,7 @@ export default Component.extend({
 
   actions: {
     remove() {
-      this.onRemove(this.get('filter'));
+      this.get('onRemove')(this.get('filter'));
     }
   }
 });

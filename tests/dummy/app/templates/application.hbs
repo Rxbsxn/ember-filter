@@ -1,5 +1,7 @@
 <h2 id="title">Welcome to Ember</h2>
-{{#ember-filter filters=model.filters as |filters|}}
-    {{filters.add availableFilters=model.availableFilters}}
+
+{{#ember-filter filters=model as |filters|}}
+    {{filters.add availableFilters=model}}
     {{filters.list}}
 {{/ember-filter}}
+

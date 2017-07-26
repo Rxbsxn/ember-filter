@@ -23,9 +23,9 @@ test('it opens list after click', function(assert) {
 
 test('it renders value component after click', function(assert) {
   this.set('isAdding', true);
-  this.render(hbs`{{ember-filter/add isAdding=isAdding}}`)
+  this.render(hbs`{{ember-filter/add isAdding=isAdding}}`);
 
   this.render(hbs`{{ember-filter/add/value}}`);
 
   assert.equal(this.$('').text().trim(), 'Choose Value');
-})
+});
