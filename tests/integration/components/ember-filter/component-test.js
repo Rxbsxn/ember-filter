@@ -10,16 +10,19 @@ moduleForComponent('ember-filter', 'Integration | Component | ember filter', {
     let filters = A([{
       name: 'filter',
       value: 2,
-      type: 'project'
+      type: 'project',
+      values: { s: 2 }
     }, {
       name: 'super filtr',
       value: 32,
-      type: 'status'
+      type: 'status',
+      values: { s: 32 }
     },
     {
       name: 'extra filtr',
       value: 2,
-      type: 'x'
+      type: 'x',
+      values: { s: 2 }
     }
     ]);
 
@@ -27,10 +30,12 @@ moduleForComponent('ember-filter', 'Integration | Component | ember filter', {
       {
         name: 'new project',
         value: 3,
-        type: 'j'
+        type: 'j',
+        values: { s: 3 }
       }, {
         name: 'ccc',
-        value: 4
+        value: 4,
+        values: { s: 4 }
       }
     ]);
 
@@ -46,15 +51,15 @@ test('it renders filter list correctly', function (assert) {
     {{/ember-filter}}
   `);
 
-  assert.equal(this.$('[data-test-name]:first').text().trim(), 'filter: 2');
-  assert.equal(this.$('[data-test-name]:last').text().trim(), 'extra filtr: 2');
+  assert.equal(this.$('[data-test-name]:first').text().trim(), 'filter: s');
+  assert.equal(this.$('[data-test-name]:last').text().trim(), 'extra filtr: s');
 
   this.render(hbs `{{#ember-filter filters=filtersTwo as |filters|}}
     {{filters.list}}
     {{/ember-filter}}
   `);
-  assert.equal(this.$('[data-test-name]:first').text().trim(), 'new project: 3');
-  assert.equal(this.$('[data-test-name]:last').text().trim(), 'ccc: 4');
+  assert.equal(this.$('[data-test-name]:first').text().trim(), 'new project: s');
+  assert.equal(this.$('[data-test-name]:last').text().trim(), 'ccc: s');
 });
 
 test('it should add new record', function (assert) {
@@ -62,8 +67,9 @@ test('it should add new record', function (assert) {
     run(() => {
       let filter = {
         name: 'State',
-        value: 'checked',
-        type: 'unknown'
+        value: 3,
+        type: 'unknown',
+        values: { s: 3 }
       };
       this.get('model').pushObject(filter);
     });

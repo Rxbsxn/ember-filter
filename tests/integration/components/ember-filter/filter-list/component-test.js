@@ -7,7 +7,11 @@ const { A } = Ember;
 moduleForComponent('ember-filter/filter-list', 'Integration | Component | ember filter/filter list', {
   integration: true,
   beforeEach() {
-    let filters = A([{ name: 'filter', value: 2, type: 'project' }, { name: 'super filtr', value: 21 }, { name: 'extra filtr', value: 73 }]);
+    let filters = A([
+      { name: 'filter', value: 2, type: 'project', values: { s: 2 } },
+      { name: 'super filtr', value: 21, values: { s: 21 } },
+      { name: 'extra filtr', value: 73, values: { s: 73 } }
+    ]);
     this.set('model', filters);
   }
 });

@@ -4,7 +4,7 @@ import hbs from 'htmlbars-inline-precompile';
 moduleForComponent('ember-filter/filter-list/filter', 'Integration | Component | ember filter/filter list/filter', {
   integration: true,
   beforeEach() {
-    let filter = { name: 'super filter', value: 3, type: 'project' };
+    let filter = { name: 'super filter', value: 3, type: 'project', values: { s: 3 } };
     this.set('filter', filter);
   }
 });
@@ -12,5 +12,5 @@ moduleForComponent('ember-filter/filter-list/filter', 'Integration | Component |
 test('it renders', function(assert) {
   this.render(hbs`{{ember-filter/filter-list/filter filter=filter}}`);
 
-  assert.equal(this.$('[data-test-name]').text().trim(), 'super filter: 3');
+  assert.equal(this.$('[data-test-name]').text().trim(), 'super filter: s');
 });
