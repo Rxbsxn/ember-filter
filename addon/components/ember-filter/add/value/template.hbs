@@ -4,7 +4,7 @@
   {{#dd.menu as |menu|}}
     {{#each-in filter.values as |key value|}}
         {{#menu.item}}
-        <a {{action "selectState" key}}>{{value}}</a>
+        <a {{action "selectState" value}}>{{key}}</a>
         {{/menu.item}}
     {{/each-in}}
   {{/dd.menu}}

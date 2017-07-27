@@ -6,11 +6,11 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
 
-  onRemove() {},
-
   actions: {
     remove() {
-      this.onRemove(this.get('filter'));
+      this.get('onRemove')(this.get('filter'));
     }
-  }
+  },
+
+  onRemove() {}
 });

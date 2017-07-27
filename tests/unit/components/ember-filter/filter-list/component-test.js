@@ -1,21 +1,21 @@
 import { moduleForComponent, test } from 'ember-qunit';
-import Ember from 'ember'
+import Ember from 'ember';
 
 const { A } = Ember;
 
 moduleForComponent('ember-filter/filter-list', 'Unit | Component | ember filter/filter list', {
-    unit: true,
-    beforeEach() {
-        let component = this.subject();
-        let filters = A([{name: "Open", value: 0, type: "project"}, {name: 'X', value: 1, type: "qaz"}]);
-        component.set('filters', filters);
-    }
+  unit: true,
+  beforeEach() {
+    let component = this.subject();
+    let filters = A([{ name: 'Open', value: 0, type: 'project' }, { name: 'X', value: 1, type: 'qaz' }]);
+    component.set('filters', filters);
+  }
 });
 
 test('it renders', function(assert) {
-    let component = this.subject();
+  let component = this.subject();
 
-    assert.ok(component);
+  assert.ok(component);
 });
 
 // test('it removes filter from list', function(assert) {
