@@ -24,4 +24,5 @@ export default Component.extend({
       values: filter.values
     });
   }
+
 });
