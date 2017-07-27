@@ -1,0 +1,8 @@
+{{#ember-filter filters=model as |filters|}}
+    {{filters.add availableFilters=model}}
+    {{filters.list filterResults=(action "filterResults")}}
+{{/ember-filter}}
+
+Sent Results: {{#each results as |result|}}
+  {{result.name}} - {{result.value}}
+{{/each}}
