@@ -1,5 +1,5 @@
 {{#each currentFilters as |filter|}}
-    {{ember-filter/filter-list/filter filter=filter onRemove=(action 'removeFilter')}}
+  {{ember-filter/filter-list/filter filter=filter onRemove=(action 'removeFilter')}}
 {{else}}
-    <h1 data-test-not-found>Filters not found</h1>
+  <h1 data-test-not-found>Filters not found</h1>
 {{/each}}
