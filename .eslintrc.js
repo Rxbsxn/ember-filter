@@ -13,11 +13,11 @@ module.exports = {
     browser: true
   },
   rules: {
-    "ember/use-ember-get-and-set": 0,
-    "ember/named-functions-in-promises": [2, {
-      allowSimpleArrowFunction: true,
+    'ember/use-ember-get-and-set': 0,
+    'ember/named-functions-in-promises': [2, {
+      allowSimpleArrowFunction: true
     }],
-    "ember/order-in-components": [2, {
+    'ember/order-in-components': [2, {
       order: [
         'service',
         'property',
