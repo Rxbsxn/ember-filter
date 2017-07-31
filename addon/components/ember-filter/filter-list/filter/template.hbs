@@ -1,4 +1,1 @@
-<span class="label label-primary" data-test-name>
-  {{filter.name}}: {{filterStatus}}
-  <button data-test-button {{action "remove"}}></button>
-</span>
+{{yield (hash name=filter.name value=filterStatus actions=(hash remove=(action 'remove')))}}

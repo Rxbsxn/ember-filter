@@ -16,11 +16,11 @@ export default Component.extend({
   actions: {
     addFilter(filter) {
       this._checkExistingRecords(filter);
+      this.get('onChange')(this.get('uniqueList'));
     },
 
     removeFilter(filter) {
       set(filter, 'value', null);
-      // console.log(filter.value);
     }
   },
 

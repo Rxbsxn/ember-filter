@@ -4,8 +4,8 @@ const { Component } = Ember;
 
 export default Component.extend({
   actions: {
-    filterResults(results) {
-      this.set('results', results);
+    onChange(filters) {
+      this.set('filters', filters);
     }
   }
 });

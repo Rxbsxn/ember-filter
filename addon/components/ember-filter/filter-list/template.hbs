@@ -1,5 +1,12 @@
 {{#each currentFilters as |filter|}}
-  {{ember-filter/filter-list/filter filter=filter onRemove=(action 'removeFilter')}}
-{{else}}
-  <h1 data-test-not-found>Filters not found</h1>
+  {{#ember-filter/filter-list/filter filter=filter onRemove=(action 'removeFilter') as |current|}}
+    {{#if hasBlock}}
+      {{yield current}}
+    {{else}}
+      <span class="label label-primary" data-test-name>
+        {{current.name}}: {{current.value}}
+        <button data-test-button {{action current.actions.remove}}></button>
+      </span>
+    {{/if}}
+  {{/ember-filter/filter-list/filter}}
 {{/each}}
